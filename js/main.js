@@ -319,71 +319,72 @@ function cam() {
 	////////////////////////////
 
 
+	// navigator.getMedia =
+	// navigator.getUserMedia ||
+	// navigator.webkitGetUserMedia ||
+	// navigator.mozGetUserMedia ||
+	// navigator.msGetUserMedia
+	// ;
 
-	navigator.getMedia =
-		navigator.getUserMedia ||
-		navigator.webkitGetUserMedia ||
-		navigator.mozGetUserMedia ||
-		navigator.msGetUserMedia
-		;
+
+	// navigator.getMedia(
+	// 	{
+	// 		video: {
+	// 			facingMode: "environment"
+	// 		}
+	// 	},
+	// 	function (stream) {
+	// 		alert('2');
 
 
-	navigator.getMedia(
+	// 		var video = document.getElementById('video');
+	// 		if (typeof (video.srcObject) != "undefined") {
+	// 			video.srcObject = stream;
+	// 			video.play();
+
+	// 			alert('6');
+
+
+
+	// 		}
+	// 		else {
+	// 			video.src = URL.createObjectURL(stream);
+	// 			alert('3');
+	// 		}
+	// 		alert('4');
+
+
+
+
+
+	// 	},
+	// 	function (error) {
+	// 		console.log(error.name + ": " + error.message);
+	// 		alert('error');
+	// 	}
+	// );
+
+	// alert('5');
+
+
+
+	/////////////////////////////////
+
+
+	getUserMedia(
 		{
-			video: {
-				facingMode: "environment"
-			}
+			video: true,
+			audio: false
 		},
-		function (stream) {
-			alert('2');
-
-
-			var video = document.getElementById('video');
-			if (typeof (video.srcObject) != "undefined") {
-				video.srcObject = stream;
-
-				alert('6');
-
-				setTimeout(() => {
-
-					var videoWidth = video.videoWidth;
-					var videoHeight = video.videoHeight;
-					console.log(videoWidth, videoHeight);
-
-					var canvas = document.getElementById('canvas');
-					if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
-						canvas.width = videoWidth;
-						canvas.height = videoHeight;
-					}
-					var ctx = canvas.getContext('2d');
-					ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-					if (canvas) {
-						console.log(canvas);
-					}
-
-
-				}, 1000);
-
+		function (err, stream) {
+			if (err) {
+				alert('error');
+				console.log('failed');
+			} else {
+				alert('yes');
+				console.log('got a stream', stream);
 			}
-			else {
-				video.src = URL.createObjectURL(stream);
-				alert('3');
-			}
-			alert('4');
-			
-
-
-
-
-		},
-		function (error) {
-			console.log(error.name + ": " + error.message);
-			alert('error');
-		}
-	);
-
-	alert('5');
-	
+		});
 
 };
 
