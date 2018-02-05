@@ -264,7 +264,7 @@
 
 
 function cam() {
-	alert('0');
+	alert('1');
 
 	// navigator.mediaDevices.getUserMedia({
 	// 	video: {
@@ -344,25 +344,25 @@ function cam() {
 
 				alert('6');
 
-				// setTimeout(() => {
+				setTimeout(() => {
 
-				// 	var videoWidth = video.videoWidth;
-				// 	var videoHeight = video.videoHeight;
-				// 	console.log(videoWidth, videoHeight);
+					var videoWidth = video.videoWidth;
+					var videoHeight = video.videoHeight;
+					console.log(videoWidth, videoHeight);
 
-				// 	var canvas = document.getElementById('canvas');
-				// 	if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
-				// 		canvas.width = videoWidth;
-				// 		canvas.height = videoHeight;
-				// 	}
-				// 	var ctx = canvas.getContext('2d');
-				// 	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-				// 	if (canvas) {
-				// 		console.log(canvas);
-				// 	}
+					var canvas = document.getElementById('canvas');
+					if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
+						canvas.width = videoWidth;
+						canvas.height = videoHeight;
+					}
+					var ctx = canvas.getContext('2d');
+					ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+					if (canvas) {
+						console.log(canvas);
+					}
 
 
-				// }, 1000);
+				}, 1000);
 
 			}
 			else {
