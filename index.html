@@ -6,8 +6,10 @@
 	<meta charset='utf-8'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="css/main.css" type="text/css" media="all">
-	<script src="js/vendor/getusermedia.bundle.js"></script>
+	<!-- <script src="js/vendor/getusermedia.bundle.js"></script> -->
 	<!-- <script src="js/vendor/getusermedia.js"></script> -->
+	<!-- <script src="js/vendor/adapter.js"></script> -->
+	<script src="js/vendor/modernizr-custom.js"></script>
 </head>
 
 <body>
@@ -15,7 +17,7 @@
 	<div class="wrap">
 
 		<div class="camera">
-			<video id="video">Video stream not available.</video>
+			<video id="video"autoplay muted>Video stream not available.</video>
 			<canvas id="output_c"> </canvas>
 		</div>
 

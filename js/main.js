@@ -318,82 +318,59 @@ function cam() {
 
 	////////////////////////////
 
-
-	// navigator.getMedia =
-	// navigator.getUserMedia ||
-	// navigator.webkitGetUserMedia ||
-	// navigator.mozGetUserMedia ||
-	// navigator.msGetUserMedia
-	// ;
-
-
-	// navigator.getMedia(
-	// 	{
-	// 		video: {
-	// 			facingMode: "environment"
-	// 		}
-	// 	},
-	// 	function (stream) {
-	// 		alert('2');
-
-
-	// 		var video = document.getElementById('video');
-	// 		if (typeof (video.srcObject) != "undefined") {
-	// 			video.srcObject = stream;
-	// 			video.play();
-
-	// 			alert('6');
-
-
-
-	// 		}
-	// 		else {
-	// 			video.src = URL.createObjectURL(stream);
-	// 			alert('3');
-	// 		}
-	// 		alert('4');
+	if (Modernizr.getusermedia) {
+		// supported
+		alert('yes');
+	} else {
+		// not-supported
+		alert('no');
+	}
 
 
 
 
 
-	// 	},
-	// 	function (error) {
-	// 		console.log(error.name + ": " + error.message);
-	// 		alert('error');
-	// 	}
-	// );
+	navigator.GM =
+		navigator.getUserMedia ||
+		navigator.webkitGetUserMedia ||
+		navigator.mozGetUserMedia ||
+		navigator.msGetUserMedia
+		;
 
-	// alert('5');
+	if (!navigator.GM) {
+		alert('Not supported MediaCaptureAPI');
+	}
+	else {
 
+		var streamInit = function (stream) {
 
-
-	/////////////////////////////////
-
-
-	getUserMedia(
-		{
-			video: true,
-			audio: false
-		},
-		function (err, stream) {
-			if (err) {
-				alert('error');
-				console.log('failed');
-			} else {
-				alert('yes');
-				console.log('got a stream', stream);
-
-
-				var video = document.getElementById('video');
-				console.log(video.srcObject);
-				if (typeof (video.srcObject) != "undefined") {
-					video.srcObject = stream;
-					video.play();
-				}
-
+			var video = document.getElementById('video');
+			if (typeof (video.srcObject) !== 'undefined') {
+				video.srcObject = stream;
 			}
-		});
+			else {
+				video.src = URL.createObjectURL(stream);
+			}
+		};
+
+		var streamError = function (error) {
+			console.log(error.name + ": " + error.message);
+			alert('error');
+		}
+
+		var streamConstraints = {
+			video: {
+				facingMode: "environment"
+			}
+		};
+
+		navigator.GM(
+			streamConstraints,
+			streamInit,
+			streamError
+		);
+
+	}
 
 };
 
