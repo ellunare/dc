@@ -264,54 +264,126 @@
 
 
 function cam() {
-	alert('YAY!');
+	alert('1');
 
-	navigator.mediaDevices.getUserMedia({
-		video: {
-			facingMode: "user"
+	// navigator.mediaDevices.getUserMedia({
+	// 	video: {
+	// 		facingMode: "environment"
+	// 	}
+	// }).then(function (stream) {
+	// 	alert('2');
+
+
+	// 	var video = document.getElementById('video');
+	// 	if (typeof (video.srcObject) != "undefined") {
+	// 		video.srcObject = stream;
+
+	// 		alert('3');
+	// 		// setTimeout(() => {
+
+	// 		// 	var videoWidth = video.videoWidth;
+	// 		// 	var videoHeight = video.videoHeight;
+	// 		// 	console.log(videoWidth, videoHeight);
+
+	// 		// 	var canvas = document.getElementById('canvas');
+	// 		// 	if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
+	// 		// 		canvas.width = videoWidth;
+	// 		// 		canvas.height = videoHeight;
+	// 		// 	}
+	// 		// 	var ctx = canvas.getContext('2d');
+	// 		// 	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+	// 		// 	if (canvas) {
+	// 		// 		console.log(canvas);
+	// 		// 	}
+
+
+	// 		// }, 1000);
+
+	// 	}
+	// 	else {
+	// 		video.src = URL.createObjectURL(stream);
+	// 	}
+
+	// 	alert('4');
+
+
+
+	// }).catch(function (error) {
+	// 	console.log(error.name + ": " + error.message);
+	// 	alert('error');
+	// });
+
+	// alert('5');
+
+
+	////////////////////////////
+
+
+
+	navigator.getMedia =
+		navigator.getUserMedia ||
+		navigator.webkitGetUserMedia ||
+		navigator.mozGetUserMedia ||
+		navigator.msGetUserMedia
+		;
+
+
+	navigator.getMedia(
+		{
+			video: {
+				facingMode: "environment"
+			}
+		},
+		function (stream) {
+			alert('2');
+
+
+			var video = document.getElementById('video');
+			if (typeof (video.srcObject) != "undefined") {
+				video.srcObject = stream;
+
+				// setTimeout(() => {
+
+				// 	var videoWidth = video.videoWidth;
+				// 	var videoHeight = video.videoHeight;
+				// 	console.log(videoWidth, videoHeight);
+
+				// 	var canvas = document.getElementById('canvas');
+				// 	if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
+				// 		canvas.width = videoWidth;
+				// 		canvas.height = videoHeight;
+				// 	}
+				// 	var ctx = canvas.getContext('2d');
+				// 	ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+				// 	if (canvas) {
+				// 		console.log(canvas);
+				// 	}
+
+
+				// }, 1000);
+
+			}
+			else {
+				video.src = URL.createObjectURL(stream);
+				alert('3');
+			}
+			alert('4');
+			
+
+
+
+
+		},
+		function (error) {
+			console.log(error.name + ": " + error.message);
+			alert('error');
 		}
-	}).then(function (stream) {
+	);
 
-
-		var video = document.getElementById('video');
-		if (typeof (video.srcObject) != "undefined") {
-			video.srcObject = stream;
-
-			setTimeout(() => {
-
-				var videoWidth = video.videoWidth;
-				var videoHeight = video.videoHeight;
-				console.log(videoWidth, videoHeight);
-
-				var canvas = document.getElementById('canvas');
-				if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
-					canvas.width = videoWidth;
-					canvas.height = videoHeight;
-				}
-				var ctx = canvas.getContext('2d');
-				ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-				if (canvas) {
-					console.log(canvas);
-				}
-
-
-
-			}, 1000);
-
-		}
-		else {
-			video.src = URL.createObjectURL(stream);
-		}
-
-
-
-
-
-	}).catch(function (error) {
-		console.log(error.name + ": " + error.message);
-	});
-
+	alert('5');
+	
 
 };
+
 
 cam();
