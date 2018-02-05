@@ -272,13 +272,38 @@ function cam() {
 		}
 	}).then(function (stream) {
 
-var video = document.getElementById('video');
-if (typeof(video.srcObject) != "undefined") {
-	video.srcObject = stream;
-}
-else {
-	video.src = URL.createObjectURL(stream);
-}
+
+		var video = document.getElementById('video');
+		if (typeof (video.srcObject) != "undefined") {
+			video.srcObject = stream;
+
+			setTimeout(() => {
+
+				var videoWidth = video.videoWidth;
+				var videoHeight = video.videoHeight;
+				console.log(videoWidth, videoHeight);
+
+				var canvas = document.getElementById('canvas');
+				if (canvas.width !== videoWidth || canvas.height !== videoHeight) {
+					canvas.width = videoWidth;
+					canvas.height = videoHeight;
+				}
+				var ctx = canvas.getContext('2d');
+				ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+				if (canvas) {
+					console.log(canvas);
+				}
+
+
+
+			}, 1000);
+
+		}
+		else {
+			video.src = URL.createObjectURL(stream);
+		}
+
+
 
 
 

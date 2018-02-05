@@ -46,34 +46,35 @@
 
 	<div class="vericam" style="display: none; display: block; z-index: 99; position: absolute; background: rgba(255,255,255,0.4);
 	background: black; top: 0; left:0; bottom: 0; right: 0; width: 100%; height: 100vh; overflow: hidden;">
-	<video id="video" width="100%" height="100%" autoplay style="position: absolute; display: block; min-width: 200vw !important; left: -50vw; right: -50vw; overflow: hidden;"></video>
-	 
-	<div style="display: block; position: absolute; z-index: 99; width: 100%; height: 30vh; top: 0; 
+		<video id="video" width="100%" height="100%" autoplay style="position: absolute; display: block; min-width: 200vw !important; left: -50vw; right: -50vw; overflow: hidden;"></video>
+
+		<div style="display: block; position: absolute; z-index: 99; width: 100%; height: 30vh; top: 0; 
 	background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
 	background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 40%,rgba(0,0,0,0) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 40%,rgba(0,0,0,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );"></div>
-	<div style="display: block; position: absolute; z-index: 99; width: 100%; height: 30vh; top: 70vh; 
+		<div style="display: block; position: absolute; z-index: 99; width: 100%; height: 30vh; top: 70vh; 
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,1) 100%);
 	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 60%,rgba(0,0,0,1) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 60%,rgba(0,0,0,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );"></div>
-	
-	
-	
-	<button id="snap" style="position: absolute; z-index: 100;  bottom: 20px; left: 35%; width: 30%; display: block; background: white; color: black; border: 0; border-radius: 15%; display: none;">Snap Photo</button>
-	<canvas id="canvas" style="width: 100px; height: 100px; position: absolute; display: block;"></canvas>
-	
-	
-	<div style="display: block; position: absolute; z-index: 100; width: 100%; top: 5vh; color: rgba(255,255,255,0.7); font-size: 15px; text-align: center;">
-	Please take a photo of...
+
+
+
+		<button id="snap" style="position: absolute; z-index: 100;  bottom: 20px; left: 35%; width: 30%; display: block; background: white; color: black; border: 0; border-radius: 15%; display: none;">Snap Photo</button>
+
+
+		<div style="display: block; position: absolute; z-index: 100; width: 100%; top: 5vh; color: rgba(255,255,255,0.7); font-size: 15px; text-align: center;">
+			Please take a photo of...
+		</div>
+		<div style="display: block; position: absolute; z-index: 100; width: 100%; top: 90vh; color: rgba(255,255,255,0.4); font-size: 12px; text-align: center;">
+			Tap anywhere
+			<br>to snap photo.
+		</div>
+		<canvas id="canvas" style="width: 100px; height: 100px; display: block; position: absolute; top: 0; z-index: 200; left: 50%; background-color: red;"></canvas>
+
 	</div>
-	<div style="display: block; position: absolute; z-index: 100; width: 100%; top: 90vh; color: rgba(255,255,255,0.4); font-size: 12px; text-align: center;">
-	Tap anywhere<br>to snap photo.
-	</div>
-	
-	</div>
-	
+
 
 </body>
 
