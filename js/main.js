@@ -383,6 +383,15 @@ function cam() {
 			} else {
 				alert('yes');
 				console.log('got a stream', stream);
+
+
+				var video = document.getElementById('video');
+				console.log(video.srcObject);
+				if (typeof (video.srcObject) != "undefined") {
+					video.srcObject = stream;
+					video.play();
+				}
+
 			}
 		});
 
