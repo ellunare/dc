@@ -264,7 +264,7 @@
 
 
 function cam() {
-	alert('1');
+	alert('0');
 
 	// navigator.mediaDevices.getUserMedia({
 	// 	video: {
@@ -341,6 +341,8 @@ function cam() {
 			var video = document.getElementById('video');
 			if (typeof (video.srcObject) != "undefined") {
 				video.srcObject = stream;
+
+				alert('6');
 
 				// setTimeout(() => {
 
