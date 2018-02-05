@@ -1,0 +1,43 @@
+/* MAIN CSS */
+* {
+  margin: 0;
+  padding: 0; }
+
+.wrap {
+  text-align: center; }
+
+.camera {
+  margin: 0 auto;
+  width: 320px;
+  height: 240px;
+  background-color: gold;
+  position: relative;
+  /* overflow: hidden; */ }
+
+#video {
+  /* width:320px; */
+  /* height:240px; */
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0; }
+
+#output_c {
+  background-color: gray;
+  position: absolute;
+  z-index: 20;
+  right: -webkit-calc(320px - 50px);
+  right: calc(320px - 50px);
+  top: 0;
+  opacity: 0.5; }
+
+#input_c {
+  display: none;
+  background-color: gold; }
+
+.simple_btn {
+  display: inline-block;
+  cursor: pointer;
+  width: 100px;
+  height: 100px; }
