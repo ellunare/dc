@@ -327,15 +327,14 @@ function cam() {
 	}
 
 
-
+	var _v = null;
 
 
 	navigator.GM =
 		navigator.getUserMedia ||
 		navigator.webkitGetUserMedia ||
 		navigator.mozGetUserMedia ||
-		navigator.msGetUserMedia
-		;
+		navigator.msGetUserMedia;
 
 	if (!navigator.GM) {
 		alert('Not supported MediaCaptureAPI');
@@ -351,6 +350,8 @@ function cam() {
 			else {
 				video.src = URL.createObjectURL(stream);
 			}
+
+			_v = video;
 		};
 
 		var streamError = function (error) {
@@ -364,11 +365,26 @@ function cam() {
 			}
 		};
 
+
 		navigator.GM(
 			streamConstraints,
 			streamInit,
 			streamError
 		);
+
+
+		// navigator.GM(
+		// 	(streamConstraints)
+		// 		.then(streamInit)
+		// 		.catch(streamError)
+		// );
+
+
+		playb = document.getElementById('playb');
+		playb.addEventListener('click', function(e){
+			console.log('eeeee');
+			_v.play();
+		});
 
 	}
 
