@@ -6,39 +6,46 @@
 .wrap {
   text-align: center; }
 
-.camera {
+.main {
   margin: 0 auto;
-  width: 320px;
-  height: 240px;
-  background-color: gold;
-  position: relative;
-  /* overflow: hidden; */ }
-
-#video {
-  /* width:320px; */
-  /* height:240px; */
   width: 100%;
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  background-color: red; }
-
-#output_c {
-  background-color: gray;
-  position: absolute;
-  z-index: 20;
-  right: -webkit-calc(320px - 50px);
-  right: calc(320px - 50px);
-  top: 0;
-  opacity: 0.5; }
-
-#input_c {
-  display: none;
+  height: 220px;
   background-color: gold; }
 
-.simple_btn {
-  display: inline-block;
-  cursor: pointer;
-  width: 100px;
-  height: 100px; }
+.ramka {
+  background-color: green;
+  width: auto;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative; }
+
+.imgs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.imgs img {
+  height: 200px; }
+
+.tag {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 200px;
+          border-radius: 200px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer; }
+
+#camera_icon {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+  margin-top: 20px; }
+
+.text {
+  display: block;
+  margin: auto; }
